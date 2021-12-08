@@ -12,7 +12,7 @@ G_DRIVE_CLIENT_ID = "197036948433-4sjgjrj1osm5b5neu8khh7c2nsvn96f7.apps.googleus
 G_DRIVE_CLIENT_SECRET = "dnXoMIu2V7HQ8G8RicrKmvlu"
 flow = None
 
-@Client.on_message(Filters.private & Filters.incoming & Filters.command(['auth']))
+@Client.on_message(filters.private & filters.incoming & filters.command(['auth']))
 async def _auth(client, message):
   creds = db.get_credential(message.from_user.id)
   if creds is not None:
@@ -34,7 +34,7 @@ async def _auth(client, message):
       await message.reply_text(f"**ERROR:** ```{e}```", quote=True)
 
 
-@Client.on_message(Filters.private & Filters.incoming & Filters.command(['revoke']))
+@Client.on_message(filters.private & filters.incoming & filters.command(['revoke']))
 async def _revoke(client, message):
   if db.get_credential(message.from_user.id) is None:
    await message.reply_text("🔑 **You have not authenticated me to upload to any account.**\n__Send /auth to authenticate.__", quote=True)
@@ -46,7 +46,7 @@ async def _revoke(client, message):
       await message.reply_text(f"**ERROR:** ```{e}```", quote=True)
 
 
-@Client.on_message(Filters.private & Filters.incoming & Filters.command(['setfolder']))
+@Client.on_message(filters.private & filters.incoming & filters.command(['setfolder']))
 async def _set_parent(client, message):
   if len(message.command) > 1:
     cmd_msg = message.command[1]
@@ -66,7 +66,7 @@ async def _set_parent(client, message):
     else:
       await message.reply_text('**You did not set any Custom Folder ID**\n__Use__ ```/setfolder {folder URL}``` __to set your custom folder ID.__', quote=True)
 
-@Client.on_message(Filters.private & Filters.incoming & Filters.text)
+@Client.on_message(filters.private & filters.incoming & filters.text)
 async def _token(client, message):
   token = message.text.split()[-1]
   WORD = len(token)
