@@ -1,6 +1,6 @@
 wget
 asyncio
-https://github.com/pyrogram/pyrogram/archive/asyncio.zip
+https://github.com/Dineshkarthik/telegram_media_downloader/archive/refs/tags/v1.0.0.zip
 tgcrypto
 oauth2client
 psycopg2-binary
