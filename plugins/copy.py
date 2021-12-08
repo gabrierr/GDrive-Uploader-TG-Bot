@@ -1,7 +1,7 @@
 import os
 import re
 import json
-from pyrogram import Client, filters
+from pyrogram import Client, Filters
 from helpers import gDrive_sql as db
 from plugins.main import humanbytes
 from plugins.token import getIdFromUrl
@@ -87,7 +87,7 @@ def create_directory(service, directory_name, parent_id):
 
 
 
-@Client.on_message(filters.private & filters.incoming & filters.command(['copy']))
+@Client.on_message(Filters.private & Filters.incoming & Filters.command(['copy']))
 async def _copy(client, message):
   creds = db.get_credential(message.from_user.id)
   if creds is None:
