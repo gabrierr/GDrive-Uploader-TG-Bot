@@ -1,6 +1,6 @@
 import re
 from httplib2 import Http
-from pyrogram import Client, filters
+from pyrogram import Client, Filters
 from oauth2client.client import OAuth2WebServerFlow, FlowExchangeError
 from helpers import gDrive_sql as db
 from helpers import parent_id_sql as sql
@@ -34,7 +34,7 @@ async def _auth(client, message):
       await message.reply_text(f"**ERROR:** ```{e}```", quote=True)
 
 
-@Client.on_message(filters.private & filters.incoming & filters.command(['revoke']))
+@Client.on_message(Filters.private & Filters.incoming & Filters.command(['revoke']))
 async def _revoke(client, message):
   if db.get_credential(message.from_user.id) is None:
    await message.reply_text("🔑 **You have not authenticated me to upload to any account.**\n__Send /auth to authenticate.__", quote=True)
@@ -46,7 +46,7 @@ async def _revoke(client, message):
       await message.reply_text(f"**ERROR:** ```{e}```", quote=True)
 
 
-@Client.on_message(filters.private & filters.incoming & filters.command(['setfolder']))
+@Client.on_message(Filters.private & Filters.incoming & Filters.command(['setfolder']))
 async def _set_parent(client, message):
   if len(message.command) > 1:
     cmd_msg = message.command[1]
@@ -66,7 +66,7 @@ async def _set_parent(client, message):
     else:
       await message.reply_text('**You did not set any Custom Folder ID**\n__Use__ ```/setfolder {folder URL}``` __to set your custom folder ID.__', quote=True)
 
-@Client.on_message(filters.private & filters.incoming & filters.text)
+@Client.on_message(Filters.private & Filters.incoming & Filters.text)
 async def _token(client, message):
   token = message.text.split()[-1]
   WORD = len(token)
