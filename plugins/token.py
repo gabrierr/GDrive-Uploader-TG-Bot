@@ -5,7 +5,7 @@ from oauth2client.client import OAuth2WebServerFlow, FlowExchangeError
 from helpers import gDrive_sql as db
 from helpers import parent_id_sql as sql
 
-OAUTH_SCOPE = "https://www.googleapis.com/auth/drive"
+OAUTH_SCOPE = "https://oauth2.googleapis.com/token"
 REDIRECT_URI = "urn:ietf:wg:oauth:2.0:oob"
 G_DRIVE_DIR_MIME_TYPE = "application/vnd.google-apps.folder"
 G_DRIVE_CLIENT_ID = "175244381496-giah3ht2voc4o91o25qos5co2ll5539n.apps.googleusercontent.com"
