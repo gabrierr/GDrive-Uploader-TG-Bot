@@ -3,7 +3,7 @@ import math
 import wget
 import time
 import asyncio
-from pyrogram import Client, filters
+from pyrogram import Client, Filters
 from config import Config
 from pySmartDL import SmartDL
 from plugins.uploader import upload_file
@@ -11,7 +11,7 @@ from helpers import gDrive_sql as db
 from helpers import parent_id_sql as sql
 from urllib.error import HTTPError
 
-@Client.on_message(filters.private & filters.incoming & (filters.audio | filters.photo | filters.video | filters.document | filters.regex('^(ht|f)tp*')))
+@Client.on_message(Filters.private & Filters.incoming & (Filters.audio | Filters.photo | Filters.video | Filters.document | Filters.regex('^(ht|f)tp*')))
 async def _start(client, message):
   creds = db.get_credential(message.from_user.id)
   if creds is None:
