@@ -1,4 +1,4 @@
-from pyrogram import Client, Filters, InlineKeyboardMarkup, InlineKeyboardButton, Emoji
+from pyrogram import Client, filters, InlineKeyboardMarkup, InlineKeyboardButton, Emoji
 from config import Messages as tr
 
 @Client.on_message(Filters.private & Filters.incoming & Filters.command(['start']))
