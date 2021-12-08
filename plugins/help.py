@@ -1,4 +1,4 @@
-from pyrogram import Client, filters, Emoji
+from pyrogram import Client, filters, emoji
 from pyrogram import InlineKeyboardMarkup, InlineKeyboardButton
 from config import Messages as tr
 
