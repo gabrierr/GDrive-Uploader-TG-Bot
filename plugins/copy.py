@@ -87,7 +87,7 @@ def create_directory(service, directory_name, parent_id):
 
 
 
-@Client.on_message(Filters.private & Filters.incoming & Filters.command(['copy']))
+@Client.on_message(filters.private & filters.incoming & filters.command(['copy']))
 async def _copy(client, message):
   creds = db.get_credential(message.from_user.id)
   if creds is None:
