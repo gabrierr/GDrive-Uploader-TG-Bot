@@ -1,6 +1,6 @@
 import re
 from httplib2 import Http
-from pyrogram import Client, Filters
+from pyrogram import Client, filters
 from oauth2client.client import OAuth2WebServerFlow, FlowExchangeError
 from helpers import gDrive_sql as db
 from helpers import parent_id_sql as sql
