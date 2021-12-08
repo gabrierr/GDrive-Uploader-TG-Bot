@@ -8,10 +8,10 @@ class Config:
     API_HASH = os.environ.get('API_HASH')
     DATABASE_URL = os.environ.get('DATABASE_URL')
   else:
-    BOT_TOKEN = '1394534244:AAHbVTthzn1sNbclrt9lyrrSt_Msvz46jWA' # Get it from https://t.me/BotFather
-    APP_ID = '1680362' # Get it from my.telegram.org/apps
-    API_HASH = '8cebfa99b9719c28a5e16fedaa0eeaad' # Get it from my.telegram.org/apps
-    DATABASE_URL = 'postgres://mdvgqgverqgesc:263a6b5b49f8539c4b1bb106ff7b300e5b5ebb3b46c3314fc57e8da9865c6457@ec2-34-192-122-0.compute-1.amazonaws.com:5432/d6c18273hu4a0r' # SQL Database URL / Heroku Postgres URL
+    BOT_TOKEN = '5016535158:AAH8xEFfT0HIw4nU0Q7gkDr-cHPwsirUcJg' # Get it from https://t.me/BotFather
+    APP_ID = '6079533' # Get it from my.telegram.org/apps
+    API_HASH = 'f18a53c6f9963ca6489860865205a69b' # Get it from my.telegram.org/apps
+    DATABASE_URL = 'postgres://typlpamm:unjzJg0VF5jQfPqndXjbBaPAtsANZgNo@chunee.db.elephantsql.com/typlpamm' # SQL Database URL / Heroku Postgres URL
 
 
 class Messages:
