@@ -1,7 +1,7 @@
 from pyrogram import Client, filters, InlineKeyboardMarkup, InlineKeyboardButton, Emoji
 from config import Messages as tr
 
-@Client.on_message(Filters.private & Filters.incoming & Filters.command(['start']))
+@Client.on_message(filters.private & filters.incoming & filters.command(['start']))
 async def _start(client, message):
     await client.send_message(chat_id = message.chat.id,
         text = tr.START_MSG.format(message.from_user.first_name),
@@ -11,7 +11,7 @@ async def _start(client, message):
     )
 
 
-@Client.on_message(Filters.private & Filters.incoming & Filters.command(['help']))
+@Client.on_message(filters.private & filters.incoming & filters.command(['help']))
 async def _help(client, message):
     await client.send_message(chat_id = message.chat.id,
         text = tr.HELP_MSG[1],
@@ -21,7 +21,7 @@ async def _help(client, message):
         reply_to_message_id = message.message_id
     )
 
-help_callback_filter = Filters.create(lambda _, query: query.data.startswith('help+'))
+help_callback_filter = filters.create(lambda _, query: query.data.startswith('help+'))
 
 @Client.on_callback_query(help_callback_filter)
 async def help_answer(c, callback_query):
