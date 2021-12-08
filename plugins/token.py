@@ -5,11 +5,11 @@ from oauth2client.client import OAuth2WebServerFlow, FlowExchangeError
 from helpers import gDrive_sql as db
 from helpers import parent_id_sql as sql
 
-OAUTH_SCOPE = "https://oauth2.googleapis.com/token"
+OAUTH_SCOPE = "https://www.googleapis.com/auth/drive"
 REDIRECT_URI = "urn:ietf:wg:oauth:2.0:oob"
 G_DRIVE_DIR_MIME_TYPE = "application/vnd.google-apps.folder"
-G_DRIVE_CLIENT_ID = "175244381496-giah3ht2voc4o91o25qos5co2ll5539n.apps.googleusercontent.com"
-G_DRIVE_CLIENT_SECRET = "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"
+G_DRIVE_CLIENT_ID = "175244381496-1l6tgcnnd05n9npso20ark5k1ml3a4u6.apps.googleusercontent.com"
+G_DRIVE_CLIENT_SECRET = "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"
 flow = None
 
 @Client.on_message(filters.private & filters.incoming & filters.command(['auth']))
